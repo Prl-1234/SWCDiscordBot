@@ -12,7 +12,9 @@ const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('
 client.once('ready',()=>{
 	console.log('Bot is online!');
 });
-
+client.on('guildMemberAdd',member=>{
+    member.send("Welcome to SWC Discord");
+})
 client.login(token);
 
 for(const file of commandFiles){	//commandfiles has all the files which are there in the commands folder. All such files are used to implement one command each
